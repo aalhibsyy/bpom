@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Login Sistem Informasi Capaian Kinerja Pegawai</title>
+    <title>Login SKP BPOM</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/font-awesome.min.css') ?>" rel="stylesheet">
@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png') ?>">
     <style>
       body{
-        background-image: url(<?php echo base_url('assets/img/bg.jpg') ?>) !important;
+        background-color: #19A55d !important;
         height: 100% !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="<?php echo base_url(); ?>" target='_blank'><span style="color:#ffffff">Sistem Informasi Capaian Kinerja</span> <span style="color:#ffffff"><b style="color">Pegawai</b></span></a>
+        <a href="<?php echo base_url(); ?>" target='_blank'><span style="color:#ffffff">SKP BPOM</span> <span style="color:#ffffff"><b style="color">Pegawai</b></span></a>
       </div>
       <div class="login-box-body">
         <p class="login-box-msg">Silahkan Login</p>

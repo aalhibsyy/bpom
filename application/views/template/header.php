@@ -7,204 +7,94 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/dataTables.bootstrap.css') ?>" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic"> -->
-    <link href="<?php echo base_url('assets/css/pe-icon-7-stroke.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/helper.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/style.default.css" id="theme-stylesheet') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/owl.carousel.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/owl.theme.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/simpletextrotator.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/font-awesome.min.css') ?>" rel="stylesheet">
-    <link href="<?=base_url();?>assets/css/select2.min.css" rel="stylesheet">
-    <link href="<?=base_url();?>assets/css/bootstrap-datepicker.min.css" rel="stylesheet">
-    <link href="<?=base_url();?>assets/css/sweetalert.css" rel="stylesheet">
-    <!-- <link href="<?php echo base_url('assets/css/bootstrap-material-design.min.css') ?>" rel="stylesheet"> -->
-    <link href="<?php echo base_url('assets/css/custom.css') ?>" rel="stylesheet">
     <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png') ?>">
+    <link href="<?=base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="<?=base_url();?>assets/css/bootstrap-chosen.css" rel="stylesheet">
+    <link href="<?=base_url();?>assets/css/custom.css" rel="stylesheet">
   </head>
   <?php
     $lvl = $this->session->userdata('lvl');
     $is_admin = $this->session->userdata('administrator');
   ?>
-  <body data-spy="scroll" data-target="#navigation" data-offset="120">
-    <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
-    <!-- <script src="<?php echo base_url('assets/js/material.min.js') ?>"></script> -->
-    <script src="<?php echo base_url('assets/js/jquery.dataTables.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/dataTables.bootstrap.js') ?>"></script>
-    <script type="text/javascript" src="<?=base_url();?>assets/js/bootstrap-datepicker.min.js"></script>
-    <!-- <script type="text/javascript" src="<?=base_url();?>assets/js/moment-with-locales.min.js"></script> -->
-    <div id="all">
-      <!-- navbar-->
-      <header class="header">
-        <div role="navigation" class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-            <div class="navbar-header"><a href="<?php echo base_url(); ?>" class="navbar-brand"><img src="<?php echo base_url('assets/img/logo.png') ?>" alt="logo" class="hidden-xs hidden-sm"><img src="<?php echo base_url('assets/img/logo-small.png') ?>" alt="logo" class="visible-xs visible-sm"><span class="sr-only">Go to homepage</span></a>
-              <div class="navbar-buttons">
-                <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle navbar-btn">Menu<i class="pe-7s-menu"></i></button>
-              </div>
-            </div>
-            <div id="navigation" class="collapse navbar-collapse navbar-right">
-              <ul class="nav navbar-nav">
-              <?php if($this->session->userdata('isLogin')) { ?>
-                <?php if($menu==0){ ?>
-                  <li class="active">
-                    <a href="<?=base_url();?>">
-                      <span class="glyphicon glyphicon-home"></span> Beranda
-                    </a>
-                  </li>
-                  <?php } else { ?>
-                    <li>
-                      <a href="<?=base_url();?>">
-                        <span class="glyphicon glyphicon-home"></span> Beranda
-                      </a>
-                    </li>
-                  <?php } ?>
-
-                  <?php if($menu==36){ ?>
-                  <li class="active">
-                    <a href="<?=base_url();?>dashboard">
-                      <span class=""></span> Dashboard
-                    </a>
-                  </li>
-                  <?php } else { ?>
-                    <li>
-                      <a href="<?=base_url();?>dashboard">
-                        <span class=""></span> Dashboard
-                      </a>
-                    </li>
-                  <?php } ?>
-
-              <?php if($is_admin) { ?>
-                <?php if($menu==1){ ?>
-                  <li class="dropdown active" >
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kelola<b class="caret"></b></a>
-                    <ul class="dropdown-menu" style="width:100%">
-                      <?php if(strcmp(substr($this->session->userdata('satker'), -2 ), '00')==0){ ?>
-                        <li>
-                          <a href="<?=base_url();?>master/administrator">
-                            <span class=""></span> Master Administrator
-                          </a>
+  <body>
+    
+  <header id="main-header">
+        <nav class="navbar navbar-expand-lg top-navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="<?=base_url();?>assets/images/bpom-logo.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="<?=base_url();?>assets/images/user-icon.png">
+                                <?php echo $this->session->userdata('nama_lengkap'); ?> 
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="<?=base_url();?>user/profil" class="dropdown-item" href="#">
+                                    <img src="" alt="">
+                                    Profile
+                                </a>
+                                <a href="<?=base_url();?>user/ubah_password" class="dropdown-item" href="#">
+                                    <img src="" alt="">
+                                    Change Password
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="<?=base_url();?>login/logout" class="dropdown-item" href="#">
+                                    <img src="" alt="">
+                                    Log Out
+                                </a>
+                            </div>
                         </li>
-                      <?php } ?>
-                      <li>
-                        <a href="<?=base_url();?>master/pegawai">
-                          <span class=""></span> Master Pegawai
-                        </a>
-                      </li>
                     </ul>
-                  </li>
-                <?php } else { ?>
-                <li class="dropdown" >
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kelola<b class="caret"></b></a>
-                  <ul class="dropdown-menu" style="width:100%">
-                    <?php if($this->session->userdata('id_admin')==1){ ?>
-                      <li>
-                        <a href="<?=base_url();?>master/administrator">
-                          <span class=""></span> Master Administrator
-                        </a>
-                      </li>
-                    <?php } ?>
-                    <li>
-                      <a href="<?=base_url();?>master/pegawai">
-                        <span class=""></span> Master Pegawai
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              <?php } ?>
-              <?php } ?>
-
-              <?php if($lvl=='1'||$lvl=='2'||$lvl=='3') { ?>
-              <?php if($menu==4){ ?>
-                <li class="active">
-                  <a href="<?=base_url();?>approve">
-                    <span class=""></span> Persetujuan
-                  </a>
-                </li>
-              <?php }else{ ?>
-                <li>
-                  <a href="<?=base_url();?>approve">
-                    <span class=""></span> Persetujuan
-                  </a>
-                </li>
-              <?php } ?>
-          <?php } ?>
-				
-          <?php if($menu==5){ ?>
-            <li class="active">
-              <a href="<?=base_url();?>skp">
-                SKP
-              </a>
-            </li>
-          <?php }else{ ?>
-            <li>
-              <a href="<?=base_url();?>skp">
-                SKP
-              </a>
-            </li>
-          <?php } ?>
-
-          <?php if($menu==6){ ?>
-              <li class="dropdown active">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">CKP <b class="caret"></b></a>
-                <ul class="dropdown-menu" style="width:100%">
-                  <li><a href="<?=base_url();?>ckp">Lihat CKP-Target</a></li>
-                  <li><a href="<?=base_url();?>detil-realisasi-capaian-kinerja-pegawai">Lihat CKP-Realisasi</a></li>
-                  <li class="divider"></li>
-                  <li><a href="<?=base_url();?>ckp/entri_ckp_target">Entri CKP-Target</a></li>
-                  <li><a href="<?=base_url();?>ckp/entri_ckp_realisasi">Entri CKP-Realisasi</a></li>
-                  <?php if($lvl=='1'||$lvl=='2'||$lvl=='3') { ?>
-                    <li class="divider"></li>
-                    <li><a href="<?=base_url();?>ckp/all_ckp">Rekap CKP Pegawai</a></li>
-                  <?php } ?>
-                </ul>
-              </li>
-          <?php }else{ ?>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">CKP <b class="caret"></b></a>
-              <ul class="dropdown-menu" style="width:100%">
-                <li><a href="<?=base_url();?>ckp">Lihat CKP-Target</a></li>
-                <li><a href="<?=base_url();?>detil-realisasi-capaian-kinerja-pegawai">Lihat CKP-Realisasi</a></li>
-                <li class="divider"></li>
-                <li><a href="<?=base_url();?>ckp/entri_ckp_target">Entri CKP-Target</a></li>
-                <li><a href="<?=base_url();?>ckp/entri_ckp_realisasi">Entri CKP-Realisasi</a></li>
-              <?php if($lvl=='1'||$lvl=='2'||$lvl=='3') { ?>
-                <li class="divider"></li>
-                <li><a href="<?=base_url();?>ckp/all_ckp">Rekap CKP Pegawai</a></li>
-          <?php } ?>
-              </ul>
-            </li>
-          <?php } ?>
-
-                <?php if($menu==2){ ?>
-                <li class="dropdown active">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo $this->session->userdata('nama_lengkap'); ?> <b class="caret"></b></a>
-                  <ul class="dropdown-menu" style="width:100%">
-                    <li><a href="<?=base_url();?>user/profil">Lihat Profil</a></li>
-                    <li><a href="<?=base_url();?>user/ubah_password">Ubah Password</a></li>
-                  </ul>
-                </li>
-              <?php }else{ ?>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <?php echo $this->session->userdata('nama_lengkap'); ?> <b class="caret"></b></a>
-                  <ul class="dropdown-menu" style="width:100%">
-                    <li><a href="<?=base_url();?>user/profil">Lihat Profil</a></li>
-                    <li><a href="<?=base_url();?>user/ubah_password">Ubah Password</a></li>
-                  </ul>
-                </li>
-              <?php } ?>
-              <?php } ?>
-              </ul>
-              <?php if($this->session->userdata('isLogin')) { ?>
-                <a href="<?=base_url();?>login/logout" class="btn navbar-btn btn-ghost"><span class="glyphicon glyphicon-log-out"></span> Keluar</a>
-              <?php }else{ ?>
-                <a href="<?=base_url();?>login" class="btn navbar-btn btn-ghost">Login</a>
-              <?php } ?>
+                </div>
             </div>
-          </div>
+        </nav>
+      <!-- navbar-->
+        <div class="navbar navbar-expand-lg bottom-navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="<?=base_url();?>assets/images/icon-sidebar.png">
+                </a>
+    
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="<?=base_url();?>assets/images/daftar.png">
+                                Indikator
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Indikator 1</a>
+                                <a class="dropdown-item" href="#">Indikator 2</a>
+                                <a class="dropdown-item" href="#">Indikator 3</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="<?=base_url();?>assets/images/daftar.png">
+                                Kinerja
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Kinerja 1</a>
+                                <a class="dropdown-item" href="#">Kinerja 2</a>
+                                <a class="dropdown-item" href="#">Kinerja 3</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tutorial</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </header>
-      <?php echo $breadcrumb; ?>
+    </header>
