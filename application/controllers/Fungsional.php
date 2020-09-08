@@ -9,7 +9,7 @@ class Fungsional extends CI_Controller {
 			if(!$this->session->userdata('fungsional')==TRUE) {
 					redirect('login.html');
 			}else{
-				$this->load->library('encrypt');
+				// $this->load->library('encrypt');
 				$this->load->helper('tanggal');
 				$this->load->model('pegawai/pegawai_model','pegawai');
 				$this->load->model('fungsional/fungsional_model', 'fungsional');

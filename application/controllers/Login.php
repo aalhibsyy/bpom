@@ -5,7 +5,7 @@ class Login extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('login/login_model');
-		    $this->load->library('encrypt');
+		    // $this->load->library('encrypt');
     }
 
     function index($id='')

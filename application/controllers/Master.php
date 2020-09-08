@@ -8,7 +8,7 @@ class Master extends CI_Controller {
 		if(!$this->session->userdata('isLogin')) {
 				redirect('login.html');
 		}else{
-				$this->load->library('encrypt');
+				// $this->load->library('encrypt');
 				$this->load->library("Excel/PHPExcel");
 				$this->load->library('make_bread');
 				$this->load->model('pegawai/pegawai_model','pegawai');
