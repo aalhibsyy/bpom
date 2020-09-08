@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/font-awesome.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/AdminLTE.min.css') ?>" rel="stylesheet">
-    <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png') ?>">
+    <link rel="shortcut icon" href="<?php echo base_url('assets/img/bpom.gif') ?>">
     <style>
       body{
         background-color: #19A55d !important;

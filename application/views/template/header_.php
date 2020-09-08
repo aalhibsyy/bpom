@@ -30,7 +30,7 @@
     <link href="<?=base_url();?>assets/css/sweetalert.css" rel="stylesheet">
     <!-- <link href="<?php echo base_url('assets/css/bootstrap-material-design.min.css') ?>" rel="stylesheet"> -->
     <link href="<?php echo base_url('assets/css/custom.css') ?>" rel="stylesheet">
-    <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png') ?>">
+    <link rel="shortcut icon" href="<?php echo base_url('assets/img/bpom.gif') ?>">
   </head>
   <?php
     $lvl = $this->session->userdata('lvl');

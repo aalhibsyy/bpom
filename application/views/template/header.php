@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
-    <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.png') ?>">
+    <link rel="shortcut icon" href="<?php echo base_url('assets/img/bpom.gif') ?>">
     <link href="<?=base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="<?=base_url();?>assets/css/bootstrap-chosen.css" rel="stylesheet">
     <link href="<?=base_url();?>assets/css/custom.css" rel="stylesheet">
